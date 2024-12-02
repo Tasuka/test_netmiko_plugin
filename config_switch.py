@@ -27,18 +27,22 @@ def configure_switch():
         output = net_connect.send_config_set(config_commands)
         print("Configuration Output:")
         print(output)
-
+        
         # Save configuration
-        save_output = net_connect.save_config('copy running-config startup-config')
-        print("Save Output:")
-        print(save_output)
-
+        #save_output = net_connect.save_config('copy running-config startup-config')
+        #print("Save Output:")
+        #print(save_output)
+        
         # Disconnect
         net_connect.disconnect()
 
     except Exception as e:
         print(f"An error occurred: {e}")
 
+    finally:
+        print(f"finished")
+
 if __name__ == "__main__":
     configure_switch()
+
 
