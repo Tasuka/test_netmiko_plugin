@@ -17,7 +17,7 @@ def configure_switch():
 
         # List of commands to configure the switch
         config_commands = [
-            "interface GigabitEthernet0/4",
+            "interface GigabitEthernet 1/4",
             "description Configured by Netmiko",
             "switchport mode trunk",
             "no shutdown",
@@ -29,9 +29,9 @@ def configure_switch():
         print(output)
 
         # Save configuration
-        #save_output = net_connect.save_config()
-        #print("Save Output:")
-        #print(save_output)
+        save_output = net_connect.save_config('copy running-config startup-config')
+        print("Save Output:")
+        print(save_output)
 
         # Disconnect
         net_connect.disconnect()
