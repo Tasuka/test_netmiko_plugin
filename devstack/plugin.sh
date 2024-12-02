@@ -9,7 +9,7 @@ function install_netmiko_plugin {
 
 function configure_netmiko_plugin {
     echo "Configuring switch using Netmiko"
-    python3 $NETMIKO_PLUGIN_DIR/configure_switch.py
+    python3 $NETMIKO_PLUGIN_DIR/config_switch.py
 }
 
 # Main plugin logic
